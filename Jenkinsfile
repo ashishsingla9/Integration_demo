@@ -13,7 +13,7 @@ pipeline {
         stage('clean') {
             steps {
                
-                sh 'mvn -B -DskipTests clean'
+                bat 'mvn -B -DskipTests clean'
                 
             
                   }
