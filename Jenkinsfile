@@ -12,9 +12,9 @@ pipeline {
            }
         stage('clean') {
             steps {
-                dir("C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\TestPipeline") {
+               
                 sh 'mvn -B -DskipTests clean'
-                }
+                
             
                   }
                        }
