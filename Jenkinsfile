@@ -18,6 +18,14 @@ pipeline {
             
                   }
                        }
+        stage('build') {
+            steps {
+               
+                bat 'mvn -B -DskipTests install'
+                
+            
+                  }
+                       }
     }
 
 }
