@@ -1,21 +1,25 @@
 pipeline {
     agent any
-
+    tools {
+        maven "MAVEN"
+        jdk "JDK"
+    }
     stages {
+        stage('Initialize'){
+            steps{
+                echo "PATH = ${M2_HOME}/bin:${PATH}"
+                 }
+           }
         stage('clean') {
             steps {
-               
-                echo 'cleaning'
-                
-            }
-        }
+              sh 'mvn clean'
+                  }
+                       }
         stage('build') {
             steps {
                
-                bat 'mvn package'
+                sh 'mvn package'
             }
         }
-        
-        
-    }
+     }
 }
